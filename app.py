@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+from flask_cors import CORS
 import tensorflow as tf
 import numpy as np
 from PIL import Image
@@ -12,6 +13,7 @@ from nltk.corpus import stopwords
 
 # Flask app setup
 app = Flask(__name__)
+CORS(app)
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 
 # Load models
